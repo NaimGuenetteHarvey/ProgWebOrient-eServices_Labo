@@ -171,3 +171,11 @@ h4{
 /* ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
     Composant Card 
    ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀ */
+   .card{
+    background-color:white; text-align: center; padding:5px;
+    border-radius:5px; overflow: hidden; cursor:pointer; min-width:100px;
+ }
+
+ .card img{ height:100px; display:inline; }
+
+ .card h4{ margin:5px 0px; }
