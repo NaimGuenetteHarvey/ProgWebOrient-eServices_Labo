@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import List from "./_components/list";
+import List from "./list/page";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,14 +29,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         </header>
 
         <nav>
-          <a>Accueil</a>
-          <a>Liste de personnages</a>
-          <a>Fiche détaillée</a>
+          <Link href="/">Accueil</Link>
+          <Link href="/list">Liste de personnages</Link>
+          <Link href="/details">Fiche détaillée</Link>
         </nav>
 
         <main>
           {children}
-          <List/>
+          
         </main>
 
         <footer>
