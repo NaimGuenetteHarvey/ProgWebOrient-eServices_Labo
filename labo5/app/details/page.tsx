@@ -10,7 +10,7 @@ export default function details() {
    const params = useParams<{ characterName : string[] }>();
      useEffect(() => {
 
-        // Est-ce qu'un paramètre de route a été reçu ? Si non, on utilise "kenny"
+        
         const name = params.characterName ? params.characterName[0] : "kenny";
 
         setCharacterName(name);
@@ -30,21 +30,27 @@ export default function details() {
   }
 
   return (
-    <div>
-    <h3>Détails sur ???</h3>
-    <img src="/images/???.png" alt="???" />
+     <div>
+            {
+                characterDetails != null && characterName != null && 
+                <div>
+                    <h3>Détails sur {characterName}</h3>
+                    <img src={`/images/${characterName}.png`} alt={characterName} />
 
-    <div>
-        <table>
-            <tbody>
-                <tr><td><b>Nom complet</b> : </td><td>???</td></tr>
-                <tr><td><b>Âge</b> : </td><td>???</td></tr>
-                <tr><td><b>Occupation</b> : </td><td>???</td></tr>
-                <tr><td><b>Grade</b> : </td><td>???</td></tr>
-                <tr><td><b>Nombre d'épisodes</b> : </td><td>???</td></tr>
-            </tbody>
-        </table>
-    </div>
-</div>
+                    <div>
+                        <table>
+                            <tbody>
+                                <tr><td><b>Nom complet</b> : </td><td>{characterDetails.name}</td></tr>
+                                <tr><td><b>Âge</b> : </td><td>{characterDetails.age}</td></tr>
+                                <tr><td><b>Occupation</b> : </td><td>{characterDetails.occupation}</td></tr>
+                                <tr><td><b>Grade</b> : </td><td>{characterDetails.grade}</td></tr>
+                                <tr><td><b>Nombre d'épisodes</b> : </td><td>{characterDetails.nbEpisodes}</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            }
+            
+        </div>
   );
 }
