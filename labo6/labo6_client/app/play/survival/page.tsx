@@ -5,6 +5,7 @@ import { Question } from "@/app/_types/question";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useContext } from "react";
+import { useFidgetBomb } from "@/app/_hooks/useFidgetBomb";
 export default function Survival(){
 
     // Statistiques
@@ -23,7 +24,7 @@ export default function Survival(){
     const [questionIndex, setQuestionIndex] = useState(0);
 
     // Compte à rebours aléatoire (1 à 10) pour la bombe
-    const [countdown, setCountdown] = useState(Math.floor(Math.random() * 10) + 1);
+    const getFidgetBomb = useFidgetBomb();
 
     // Obtenir les 5 premières questions du jeu
     useEffect(() => {
@@ -33,14 +34,10 @@ export default function Survival(){
     }, []);
 
     // Cliquer réduit le compte à rebours de 1
-    function bombClick(){
-        setCountdown(Math.max(0, countdown - 1));
-    }
-
+   
+             {getFidgetBomb()}
     // Retourne un <div> avec une bombe ou une explosion selon le compte à rebours
-    function getFidgetBomb(){
-        return <div className="bomb" onClick={bombClick}>{countdown > 0 ? '💣' : '💥'}</div>
-    }
+    
 
     // Remplir la liste de questions
     async function fillQuestions(length : number){
