@@ -1,0 +1,121 @@
+[
+  {
+    "ContainingType": "labo15_serveur.Controllers.ItemsController",
+    "Method": "DeleteItem",
+    "RelativePath": "api/destroy",
+    "HttpMethod": "",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "labo15_serveur.Controllers.ItemsController",
+    "Method": "DeleteItem",
+    "RelativePath": "api/Items/DeleteItem/{id}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "labo15_serveur.Controllers.ItemsController",
+    "Method": "GetItem",
+    "RelativePath": "api/Items/GetItem",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[labo15_serveur.Models.Item, labo15_serveur, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "labo15_serveur.Controllers.ItemsController",
+    "Method": "GetItem",
+    "RelativePath": "api/Items/GetItem/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "labo15_serveur.Models.Item",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "labo15_serveur.Controllers.ItemsController",
+    "Method": "PostItem",
+    "RelativePath": "api/Items/PostItem",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "item",
+        "Type": "labo15_serveur.Models.Item",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "labo15_serveur.Models.Item",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "labo15_serveur.Controllers.ItemsController",
+    "Method": "PutItem",
+    "RelativePath": "api/Items/PutItem/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "item",
+        "Type": "labo15_serveur.Models.Item",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
