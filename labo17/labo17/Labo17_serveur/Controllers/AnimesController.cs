@@ -40,8 +40,12 @@ namespace Labo17_serveur.Controllers
         public async Task<ActionResult<IEnumerable<Anime>>> GetMyAnimes()
         {
 
+            User? user = await _userManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
 
-            return Ok();
+            if (user == null) return Unauthorized();
+
+            return user.Animes;
+         
         }
 
         [HttpPost]
@@ -49,6 +53,18 @@ namespace Labo17_serveur.Controllers
         public async Task<ActionResult<Anime>> PostAnime(Anime anime)
         {
 
+
+            User? user = await _userManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
+
+            if (user == null)
+            {
+                return Unauthorized();
+            }
+
+            anime.Users.Add(user);
+
+            _context.Anime.Add(anime);
+            await _context.SaveChangesAsync();
 
             return Ok(anime);
         }

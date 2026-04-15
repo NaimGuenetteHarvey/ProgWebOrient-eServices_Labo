@@ -21,7 +21,7 @@ export default function Home() {
     getAnimes();
 
     // ⛔ À décommenter lorsque vous compléterez getMyAnimes
-    //if (sessionStorage.getItem("token")) getMyAnimes();
+    if (sessionStorage.getItem("token")) getMyAnimes();
 
   }, []);
 

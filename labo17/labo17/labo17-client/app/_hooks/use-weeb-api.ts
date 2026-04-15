@@ -37,7 +37,7 @@ export function useWeebAPI(){
 
         setAnimes([...animes, x.data]);
         // ⛔ À décommenter lorsque vous compléterez getMyAnimes
-        //getMyAnimes();
+        getMyAnimes();
 
     }
 
