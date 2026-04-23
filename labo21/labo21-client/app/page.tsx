@@ -36,14 +36,19 @@ export default function Home() {
       console.log("AUCUN FICHIER");
       return;
     }
-    const file = myFileInput.current.files[0];
     const formData= new FormData();
-    formData.append("myImage", file);
+    
+    let i = 1;
+ for(let f of myFileInput.current.files){
 
-
+    // "image" + i, comme ça chaque clé est unique
+    formData.append("image" + i, f); 
+    i++;
+    
      postPicture(formData);
 
   }
+}
   
 
   return (
